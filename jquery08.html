@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--jquery-->
+    <script src="js/jquery-3.6.3.min.js"></script>
+
+</head>
+<body>
+    
+    <button id="btn">이벤트등록</button>
+
+    <input type="text" id="tag">
+
+    <select id="sel">
+        <option>1</option>
+        <option>2</option>
+    </select>
+
+    <div style="background-color: rebeccapurple;" id="mouse">마우스이벤트</div>
+
+    <script>
+        //클릭
+        $("#btn").click(function() {
+            console.log("click이벤트");
+        });
+
+        //키보드 관련이벤트
+        $("#tag").keyup(function() {
+            console.log("key~");
+        });
+
+        //체인지
+        $("#sel").change(function() {
+            console.log("change");
+        });
+
+        //마우스 이밴트 
+        $("#mouse").mousedown(function() {
+            console.log("mouse event");
+        });
+
+    </script>
+
+
+    <hr/>
+
+    <h3>이벤트 위임방식 on()</h3>
+
+    <div id="box">
+
+    </div>
+
+    <script>
+
+        setTimeout(function() {
+            
+            var str = "";
+            str += "<a href='#'>태그1</a>";
+            str += "<a href='#'>태그2</a>";
+            str += "<a href='#'>태그3</a>";
+            $("#box").html(str);
+
+        }, 2000); //2초 뒤에 태그 생성
+
+        //실행안됨
+        // $("a[href='#']").click(function() {
+        //     console.log("a링크 실행");
+        // });
+
+
+        //(이벤트종류, 위임시킬 선택자, 핸들러)
+        $("#box").on("click", "a", function() {
+            event.preventDefault(); //고유이벤트 종료
+            console.log("a링크 실행");
+        });
+
+
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--jquery-->
+    <script src="js/jquery-3.6.3.min.js"></script>
+
+
+</head>
+<body>
+    
+    <table class="xxx">
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>버튼</th>
+            <th>테스트</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>홍길동</td>
+            <td>
+                <button type="button" class="btn">버튼</button>
+            </td>
+            <td>
+                <span><i class="test">테스트1</i></span>
+                <span >테스트2</span>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>이순신</td>
+            <td>
+                <button type="button" class="btn">버튼</button>
+            </td>
+            <td>
+                <span><i class="test">테스트1</i></span>
+                <span >테스트2</span>
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+        /*
+        1. closest("선택자") - 최근접 단일 부모선택
+        2. prev() - 이전형제
+        3. next() - 다음형제
+        4. siblings() - 모든형제
+        5. first() - 첫번째 자식
+        6. last() - 마지막 자식
+        7. children() - 모든 자식
+        8. find("선택자") - 선택자의 특정 자식요소
+        */
+
+
+        $(".btn").click(function(e) {
+
+            //this or e.target -> 둘다 똑같다
+            // console.log(this);
+            // console.log(e.target)
+
+            // console.log($(this).closest("td")) ; //최근접 td태그
+            // console.log($(this).closest("tr")) ; //최근접 tr태그
+            // console.log($(this).closest(".xxx")) ; //최근접 xxx클래스
+
+            // console.log($(this).closest("td").prev()); //이전형제
+            // console.log($(this).closest("td").next()); //다음형제
+            // console.log( $(this).closest("td").siblings() ); //모든형제
+
+
+            // console.log( $(this).closest("tr").children() ); //모든자식들
+            // console.log( $(this).closest("tr").children().first() ); //첫째
+            // console.log( $(this).closest("tr").children().last() ); //막내
+
+            //console.log($(this).closest("tr").find(".test")); //test자식
+            console.log($(this).closest("tr").find("span")); //span태그자식
+
+
+        })
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--jquery-->
+    <script src="js/jquery-3.6.3.min.js"></script>
+
+</head>
+<body>
+
+    <div class="test1"></div>
+    <div class="test2"></div>
+
+    <script>
+        //값을 변경 - js로 쓸 때
+        // document.querySelector(".test1").innerHTML = "<a href='#'>kkk</a>";
+
+
+        //값을 변경 - jquery로 쓸 때
+        $(".test1").html("<a href='#'>kkk</a>"); //태그로
+        $(".test1").html(""); //공백으로
+        $(".test1").html("홍길동"); //문자열
+
+        //값을 얻음
+        var result = $(".test1").html();
+        console.log(result);
+
+        //text() - 순수한 텍스트로 인식
+        $(".test2").text("<a href='#'>kkk</a>"); //텍스트로
+
+
+    </script>
+
+    
+</body>
+</html>

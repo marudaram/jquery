@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--jquery-->
+    <script src="js/jquery-3.6.3.min.js"></script>
+
+
+</head>
+<body>
+
+    <script>
+        //js - 페이지 로드 이후 실행하는 이벤트 - 페이지별로 1개만 사용가능
+        // window.onload = function() {
+        //     console.log($("#btn"));
+        // }
+
+        //jquery - 페이지 로드 이후 실행하는 함수 - 여러개 사용가능
+        $(document).ready(function() {
+            console.log($("#btn"));
+        })
+
+        $(document).ready(function() {
+            console.log(2);
+        })
+
+    </script>
+
+    
+    <button id="btn">다큐먼트레디</button>
+
+    
+</body>
+</html>

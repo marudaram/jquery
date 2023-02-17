@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--jquery-->
+    <script src="js/jquery-3.6.3.min.js"></script>
+
+</head>
+<body>
+
+    <h3>스타일제어</h3>
+
+    <ul class="test1">
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+
+    <div class="box">box</div>
+    <div class="box">box</div>
+    <div class="box">box</div>
+    <div class="box">box</div>
+
+    <script>
+        //css속성을 변경 - js로 쓸 때
+        // var li = document.querySelectorAll(".test1 > li");
+        // for(var i = 0; i < li.length; i++) {
+        //     li[i].style.backgroundColor = "red";
+        // }
+
+        //css속성을 변경 - jquery로 쓸 때
+        $(".test1 > li").css("backgroundColor", "red");
+
+        //css속성 확인
+        var color = $(".test1 > li").css("backgroundColor");
+        console.log(color);
+
+        //css속성을 한번에 변경
+        $(".box").css({
+            backgroundColor : "blue",
+            width : "200px",
+            height : "200px",
+            display : "inline-block"
+        });
+
+
+    </script>
+
+    
+</body>
+</html>
